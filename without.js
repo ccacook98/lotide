@@ -2,7 +2,7 @@
 function without(arr1, arr2) {
   var output = [];
   for(var i = 0; i < arr1.length; i++) {
-    if(!arr2.includes(arr1[i])) { //if arr1 element at index is not contained by arr2
+    if(arr2.indexOf(arr1[i]) == -1) { //if arr1 element at index is not contained by arr2
       output.push(arr1[i]);
     }
   }
