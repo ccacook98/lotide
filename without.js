@@ -1,34 +1,33 @@
-//Note that I prefer using a more C-like syntax to declare functions.
-function without(arr1, arr2) {
-  var output = [];
-  for(var i = 0; i < arr1.length; i++) {
-    if(arr2.indexOf(arr1[i]) == -1) { //if arr1 element at index is not contained by arr2
+const without = function(arr1, arr2) {
+  let output = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2.indexOf(arr1[i]) === -1) { //if arr1 element at index is not contained by arr2
       output.push(arr1[i]);
     }
   }
   return output;
-}
+};
 
-function eqArrays(arr1, arr2) {
-  if(arr1.length != arr2.length) {
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
     return false;
   }
-  for(var i = 0; i < arr1.length; i++) {
-    if(arr1[i] != arr2[i]) {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
   return true; //return true if neither of the above return false
-}
+};
 
-function assertArraysEqual(actual, expected) {
-  var arraysEqual = eqArrays(actual, expected);
+const assertArraysEqual = function(actual, expected) {
+  let arraysEqual = eqArrays(actual, expected);
   if (arraysEqual) {
     console.log(`[O] Assertion Passed: ${actual} === ${expected}`);
   } else {
     console.log(`[X] Assertion Failed: ${actual} !== ${expected}`);
   }
-}
+};
 
 const words = ["hello", "world", "lighthouse"];
 
