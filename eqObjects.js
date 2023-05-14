@@ -6,8 +6,8 @@ const eqObjects = function(object1, object2) {
   if (obj1Keys.length !== obj2Keys.length) {
     return false;
   }
-  for (let i = 0; i < obj1Keys.length; i++) {
-    if (object1[obj1Keys[i]] !== object2[obj2Keys[i]]) {
+  for (const key in object1) {
+    if (object1[key] !== object2[key]) {
       return false;
     }
   }
@@ -15,3 +15,10 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+
+const shirtObject = { color: "red", size: "medium" };
+const anotherShirtObject= { size: "medium", color: "red" };
+console.log(eqObjects(shirtObject , anotherShirtObject)); // => true
+
+const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
+console.log(eqObjects(shirtObject , longSleeveShirtObject)); // => false
