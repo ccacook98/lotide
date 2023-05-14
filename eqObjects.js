@@ -1,12 +1,12 @@
 const eqObjects = function(object1, object2) {
-  //Retrieve lists of the keys present in each object and store them in arrays
-  const obj1Keys = Object.keys(object1);
-  const obj2Keys = Object.keys(object2);
-  //Proceed only if the lists have the same length
-  if (obj1Keys.length !== obj2Keys.length) {
-    return false;
-  }
+  //Scan over all keys in object 1 checking them for equality with object 2's keys
   for (const key in object1) {
+    if (object1[key] !== object2[key]) {
+      return false;
+    }
+  }
+  //Repeat the process for object 2. This ensures the two are completely identical.
+  for (const key in object2) {
     if (object1[key] !== object2[key]) {
       return false;
     }
