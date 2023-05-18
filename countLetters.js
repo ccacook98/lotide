@@ -12,13 +12,13 @@ const countLetters = function(lettersToCount) {
   for (const character of lettersToCount) {
     if (character !== ' ') {
       if (results[character]) {
-	results[character]++;
+        results[character]++;
       } else {
-	results[character] = 1;
+        results[character] = 1;
       }
     }
   }
-  return results; 
+  return results;
 };
 
 const output = countLetters("lighthouse in the house");

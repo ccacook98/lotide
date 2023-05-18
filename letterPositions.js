@@ -1,9 +1,9 @@
 const eqArrays = function(arr1, arr2) {
-  if(arr1.length != arr2.length) {
+  if (arr1.length !== arr2.length) {
     return false;
   }
-  for(var i = 0; i < arr1.length; i++) {
-    if(arr1[i] != arr2[i]) {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
@@ -11,7 +11,7 @@ const eqArrays = function(arr1, arr2) {
 };
 
 const assertArraysEqual = function(actual, expected) {
-  var arraysEqual = eqArrays(actual, expected);
+  let arraysEqual = eqArrays(actual, expected);
   if (arraysEqual) {
     console.log(`[O] Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -26,11 +26,11 @@ const letterPositions = function(sentence) {
     if (sentence[i] !== ' ') {
       //check if there's already something there
       if (results[sentence[i]]) {
-	//if so, add our current index to that array
+        //if so, add our current index to that array
         results[sentence[i]].push(i);
       } else {
-	//if not, create a new array in the relevant key containing the index
-	//where we first found that character
+        //if not, create a new array in the relevant key containing the index
+        //where we first found that character
         results[sentence[i]] = [i];
       }
     }

@@ -1,9 +1,9 @@
 const eqArrays = function(arr1, arr2) {
-  if(arr1.length != arr2.length) {
+  if (arr1.length !== arr2.length) {
     return false;
   }
-  for(var i = 0; i < arr1.length; i++) {
-    if(arr1[i] != arr2[i]) {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
@@ -11,7 +11,7 @@ const eqArrays = function(arr1, arr2) {
 };
 
 const assertArraysEqual = function(actual, expected) {
-  var arraysEqual = eqArrays(actual, expected);
+  let arraysEqual = eqArrays(actual, expected);
   if (arraysEqual) {
     console.log(`[O] Assertion Passed: ${actual} === ${expected}`);
   } else {
