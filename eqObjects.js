@@ -21,23 +21,26 @@ const eqArrays = function(arr1, arr2) {
 const eqObjects = function(object1, object2) {
   //Scan over all keys in object 1 checking them for equality with object 2's keys
   for (const key in object1) {
-    //Check if the key we're looking at in object 1 is an array and equal to the
-    //corresponding key in object 2
-    if (Array.isArray(object1[key]) && !eqArrays(object1[key], object2[key])) {
-      return false;
-    }
-    if (object1[key] !== object2[key]) {
+    //Check if the key we're looking at in object 1 is an array and not equal to
+    //the corresponding key in object 2
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+      if (!eqArrays(object1[key], object2[key])) {
+	return false;
+      }
+    } else if (object1[key] !== object2[key]) {
       return false;
     }
   }
   //Repeat the process for object 2. This ensures the two are completely identical.
   for (const key in object2) {
-    //Check if the key we're looking at in object 2 is an array and equal to the
-    //corresponding key in object 2
-    if (Array.isArray(object2[key]) && !eqArrays(object1[key], object2[key])) {
-      return false;
-    }
-    if (object1[key] !== object2[key]) {
+    //Check if the key we're looking at in object 2 is an array and not equal to
+    //the corresponding key in object 2
+    if (Array.isArray(object2[key]) && Array.isArray(object1[key])) {
+      if (!eqArrays(object1[key], object2[key])) {
+	console.log('We should be here');
+	return false;
+      }
+    } else if (object1[key] !== object2[key]) {
       return false;
     }
   }
