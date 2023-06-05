@@ -1,0 +1,23 @@
+{
+  "name": "@ccacook98/lotide",
+  "version": "1.0.0",
+  "description": "Lotide library for the Lighthouse Labs Web Flex course.",
+  "main": " ",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccacook98/lotide.git"
+  },
+  "author": "Caleb Cook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccacook98/lotide/issues"
+  },
+  "homepage": "https://github.com/ccacook98/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^9.2.2"
+  }
+}
