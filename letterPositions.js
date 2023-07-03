@@ -1,24 +1,3 @@
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true; //return true if neither of the above return false
-};
-
-const assertArraysEqual = function(actual, expected) {
-  let arraysEqual = eqArrays(actual, expected);
-  if (arraysEqual) {
-    console.log(`[O] Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`[X] Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 const letterPositions = function(sentence) {
   const results = {};
   for (let i = 0; i < sentence.length; i++) {
@@ -38,4 +17,4 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-assertArraysEqual(letterPositions("hello").e, [1]);
+module.exports = letterPositions;

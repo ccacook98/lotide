@@ -1,11 +1,6 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`[O] Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`[X] Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
+/*Accepts an object and a callback function and executes the callback on each key
+ *in the object until the callback returns true, then returns the first key that
+ *matched*/
 const findKey = function(obj, func) {
   let output;
   for (const key in obj) {
@@ -17,11 +12,4 @@ const findKey = function(obj, func) {
   return output;
 }
 
-assertEqual(findKey({
-  "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
-}, x => x.stars === 2), 'noma');
+module.exports = findKey;
