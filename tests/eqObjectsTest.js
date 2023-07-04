@@ -1,5 +1,5 @@
-const assert = require('chai').assert;
-const eqObject = require('../eqObject');
+const assertEqual = require('../assertEqual');
+const eqObjects = require('../eqObject');
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };

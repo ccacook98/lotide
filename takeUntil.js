@@ -6,12 +6,11 @@ const takeUntil = function(array, callback) {
   for (let i = 0; i < array.length; i++) {
     if (callback(array[i])) {
       break;
-    }
-    else {
+    } else {
       result.push(array[i]);
     }
   }
   return result;
-}
+};
 
 module.exports = takeUntil;

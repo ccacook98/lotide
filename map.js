@@ -12,7 +12,7 @@ const map = function(array, callback) {
     results[i] = callback(array[i]);
   }
   return results;
-}
+};
 
 module.exports = map;
 

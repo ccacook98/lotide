@@ -10,6 +10,6 @@ const findKey = function(obj, func) {
     }
   }
   return output;
-}
+};
 
 module.exports = findKey;
